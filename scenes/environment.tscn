@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=10 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="Script" uid="uid://uneul5dvesy4" path="res://scripts/dave.gd" id="2_0psjf"]
 [ext_resource type="Script" uid="uid://pmx0q35j6esq" path="res://scripts/trunk.gd" id="3_yw8f4"]
 [ext_resource type="Script" uid="uid://r2cilou5n01n" path="res://scripts/sir_nut.gd" id="4_jtak5"]
 [ext_resource type="Texture2D" uid="uid://ca48q03gqwwcp" path="res://assets/Sir nut.png" id="5_3drpd"]
+[ext_resource type="PackedScene" uid="uid://c54ve83yv0qm2" path="res://scenes/nut.tscn" id="5_yw8f4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3oai"]
 size = Vector2(41, 40)
@@ -45,12 +46,16 @@ offset_bottom = 377.0
 
 [node name="Sir Nut" type="CharacterBody2D" parent="."]
 script = ExtResource("4_jtak5")
+nut_scene = ExtResource("5_yw8f4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sir Nut"]
-position = Vector2(560, 315)
+position = Vector2(379.00006, 87.00003)
 shape = SubResource("RectangleShape2D_7yrbd")
 
 [node name="SirNut" type="Sprite2D" parent="Sir Nut"]
-position = Vector2(562, 319)
+position = Vector2(383.00003, 90.99999)
 scale = Vector2(0.052246626, 0.055664066)
 texture = ExtResource("5_3drpd")
+
+[node name="nut_spawn_point" type="Node2D" parent="Sir Nut"]
+position = Vector2(299, 184)
