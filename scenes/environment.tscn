@@ -1,95 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=4 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
-[ext_resource type="Script" uid="uid://uneul5dvesy4" path="res://scripts/dave.gd" id="2_0psjf"]
-[ext_resource type="Script" uid="uid://pmx0q35j6esq" path="res://scripts/trunk.gd" id="3_yw8f4"]
-[ext_resource type="Script" uid="uid://r2cilou5n01n" path="res://scripts/sir_nut.gd" id="4_jtak5"]
-[ext_resource type="Texture2D" uid="uid://ca48q03gqwwcp" path="res://assets/Sir nut.png" id="5_3drpd"]
-[ext_resource type="Script" uid="uid://dsgkkujkrln6y" path="res://scenes/branch_0.gd" id="6_yw8f4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3oai"]
-size = Vector2(41, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysate"]
-size = Vector2(17.500004, 11.890001)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yrbd"]
-size = Vector2(28.9375, 23.753891)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0psjf"]
-size = Vector2(39, 39)
+[ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
 
-[node name="Dave" type="RigidBody2D" parent="."]
-script = ExtResource("2_0psjf")
+[node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
+position = Vector2(380, 40)
 
-[node name="ColorRect" type="ColorRect" parent="Dave"]
-offset_left = 630.0
-offset_top = 594.0
-offset_right = 670.0
-offset_bottom = 634.0
-color = Color(1, 0.52156866, 1, 1)
+[node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
+z_index = 1
+position = Vector2(594, 322)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave"]
-position = Vector2(648, 613)
-shape = SubResource("RectangleShape2D_a3oai")
-
-[node name="Trunk" type="Area2D" parent="."]
-script = ExtResource("3_yw8f4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trunk"]
-z_index = -1
-position = Vector2(575.25, 326.25)
-scale = Vector2(5, 50)
-shape = SubResource("RectangleShape2D_ysate")
-
-[node name="ColorRect" type="ColorRect" parent="Trunk"]
-z_index = -1
-offset_left = 533.0
-offset_top = 31.0
-offset_right = 550.0
-offset_bottom = 42.860016
-scale = Vector2(5, 50)
-
-[node name="Sir Nut" type="CharacterBody2D" parent="."]
-script = ExtResource("4_jtak5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sir Nut"]
-shape = SubResource("RectangleShape2D_7yrbd")
-
-[node name="SirNut" type="Sprite2D" parent="Sir Nut"]
-scale = Vector2(0.01985369, 0.017333996)
-texture = ExtResource("5_3drpd")
-
-[node name="Branch0" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
-script = ExtResource("6_yw8f4")
-
-[node name="ColorRect" type="ColorRect" parent="Branch0"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(1, 0.31764707, 0.30980393, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch0"]
-shape = SubResource("RectangleShape2D_0psjf")
-
-[node name="TeleportSpot" type="Node2D" parent="Branch0"]
-position = Vector2(622, 76)
-
-[node name="Branch1" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
-
-[node name="ColorRect" type="ColorRect" parent="Branch1"]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(1, 0.31764707, 0.30980393, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch1"]
-shape = SubResource("RectangleShape2D_0psjf")
-
-[node name="TeleportSpot" type="Node2D" parent="Branch1"]
-position = Vector2(524, 73)
+[editable path="SirNut"]
+[editable path="Tree"]
+[editable path="Tree/Branches"]
