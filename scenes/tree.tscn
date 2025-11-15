@@ -1,19 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv74vk0pufhai"]
+[gd_scene load_steps=2 format=3 uid="uid://cv74vk0pufhai"]
 
-[ext_resource type="Script" uid="uid://ckym1ohomg3ns" path="res://scripts/tree.gd" id="1_avsvi"]
-[ext_resource type="Script" uid="uid://pmx0q35j6esq" path="res://scripts/trunk.gd" id="2_vplca"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vplca"]
+[sub_resource type="GDScript" id="GDScript_ict6q"]
+script/source = "extends Node
+# Generate branches
+"
 
 [node name="Tree" type="Node2D"]
-script = ExtResource("1_avsvi")
-
-[node name="Trunk" type="StaticBody2D" parent="."]
-script = ExtResource("2_vplca")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trunk"]
-shape = SubResource("RectangleShape2D_vplca")
-
-[node name="ColorRect" type="ColorRect" parent="Trunk"]
-offset_right = 40.0
-offset_bottom = 40.0
+script = SubResource("GDScript_ict6q")
