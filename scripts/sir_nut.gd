@@ -3,6 +3,42 @@ extends CharacterBody2D
 const speed = 300
 
 const gravitational_acceleration = 2
+@export var nut_scene: PackedScene
+@onready var nut_spawn_point = $nut_spawn_point
+
+func fire_nut():
+	var nut_instance = nut_scene.instantiate()
+	nut_instance.global_position = nut_spawn_point.global_position
+	get_parent().add_child(nut_instance)
+	nut_instance.launch(Vector2.DOWN)
+
+var speed = 100
+const JUMP_VELOCITY = -400.0
+
+const LEFT = 0
+const RIGHT = 1
+
+var facing_direction = LEFT
+var facing_dirty = false
+
+var nuts = 0
+
+func set_branch(new_position: Vector2):
+	self.translate(-position)
+	self.translate(new_position)
+	velocity = Vector2.ZERO 
+
+
+func _process(delta: float) -> void:
+	if facing_dirty:
+		pass
+		# set facing sprite
+	if Input.is_action_just_pressed("launch_acorn"):
+		fire_nut()
+
+func _ready() -> void:
+	self.translate(		get_node("../Branch0/TeleportSpot").position + Vector2(10, -10))
+	pass
 
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
