@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca48q03gqwwcp"
-path="res://.godot/imported/Sir nut 2.png-39df51af839a5d795feaa47cc320a2b0.ctex"
+uid="uid://tyovodgbibc6"
+path="res://.godot/imported/trunk.png-43efbd53bbb0418a65613799a05713d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sir nut 2.png"
-dest_files=["res://.godot/imported/Sir nut 2.png-39df51af839a5d795feaa47cc320a2b0.ctex"]
+source_file="res://assets/trunk.png"
+dest_files=["res://.godot/imported/trunk.png-43efbd53bbb0418a65613799a05713d9.ctex"]
 
 [params]
 
