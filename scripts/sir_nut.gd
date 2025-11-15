@@ -12,16 +12,19 @@ var facing_dirty = false
 var nuts = 0
 
 func set_branch(new_position: Vector2):
-	print(position)
-	position.x = new_position.x
-	position.y = new_position.y
-	print(position)
+	self.translate(-position)
+	self.translate(new_position)
+	velocity = Vector2.ZERO 
+
 
 func _process(delta: float) -> void:
 	if facing_dirty:
 		pass
 		# set facing sprite
 
+func _ready() -> void:
+	self.translate(		get_node("../Branch0/TeleportSpot").position + Vector2(10, -10))
+	pass
 
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
