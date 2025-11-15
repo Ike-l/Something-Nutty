@@ -15,6 +15,7 @@ var facing_dirty = false
 var nuts = 0
 
 func _ready() -> void:
+	$""
 	trunk.connect(SirNutCollisionLabel, Callable(trunk, "collided"))
 
 
