@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Something Nutty"
-run/main_scene="uid://dmsb8os34yp3b"
+run/main_scene="uid://de1abd0ch6wpt"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

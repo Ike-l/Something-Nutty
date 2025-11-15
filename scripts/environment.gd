@@ -4,8 +4,5 @@ var dave
 var sir_nut
 
 func _ready():
-	dave = get_node("dave")
-	sir_nut = get_node("sir_nut")
-	
-	dave.nut = 1
-	dave.set_nuts(100)
+	dave = get_node("Dave")
+	sir_nut = get_node("Sir Nut")

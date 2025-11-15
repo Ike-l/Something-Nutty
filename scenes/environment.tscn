@@ -1,12 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=9 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
-[ext_resource type="PackedScene" uid="uid://dbh8h2v5ecldx" path="res://scenes/dave.tscn" id="2_hlc4h"]
-[ext_resource type="PackedScene" uid="uid://dmsb8os34yp3b" path="res://scenes/sir_nut.tscn" id="3_0psjf"]
+[ext_resource type="Script" uid="uid://uneul5dvesy4" path="res://scripts/dave.gd" id="2_0psjf"]
+[ext_resource type="Script" uid="uid://pmx0q35j6esq" path="res://scripts/trunk.gd" id="3_yw8f4"]
+[ext_resource type="Script" uid="uid://r2cilou5n01n" path="res://scripts/sir_nut.gd" id="4_jtak5"]
+[ext_resource type="Texture2D" uid="uid://ca48q03gqwwcp" path="res://assets/Sir nut.png" id="5_3drpd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3oai"]
+size = Vector2(41, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysate"]
+size = Vector2(40, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yrbd"]
+size = Vector2(93.875, 81.50784)
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
 
-[node name="dave" parent="." instance=ExtResource("2_hlc4h")]
+[node name="Dave" type="RigidBody2D" parent="."]
+script = ExtResource("2_0psjf")
 
-[node name="sir_nut" parent="." instance=ExtResource("3_0psjf")]
+[node name="ColorRect" type="ColorRect" parent="Dave"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.52156866, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave"]
+position = Vector2(20.5, 20)
+shape = SubResource("RectangleShape2D_a3oai")
+
+[node name="Trunk" type="Area2D" parent="."]
+script = ExtResource("3_yw8f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trunk"]
+position = Vector2(448, 357)
+shape = SubResource("RectangleShape2D_ysate")
+
+[node name="ColorRect" type="ColorRect" parent="Trunk"]
+offset_left = 429.0
+offset_top = 337.0
+offset_right = 469.0
+offset_bottom = 377.0
+
+[node name="Sir Nut" type="CharacterBody2D" parent="."]
+script = ExtResource("4_jtak5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sir Nut"]
+position = Vector2(560, 315)
+shape = SubResource("RectangleShape2D_7yrbd")
+
+[node name="SirNut" type="Sprite2D" parent="Sir Nut"]
+position = Vector2(562, 319)
+scale = Vector2(0.052246626, 0.055664066)
+texture = ExtResource("5_3drpd")
