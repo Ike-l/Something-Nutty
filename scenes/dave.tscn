@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbh8h2v5ecldx"]
+
+[ext_resource type="Script" uid="uid://uneul5dvesy4" path="res://scripts/dave.gd" id="1_2ogmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+size = Vector2(41, 40)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dave" type="RigidBody2D" parent="."]
+script = ExtResource("1_2ogmy")
+
+[node name="ColorRect" type="ColorRect" parent="Dave"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.52156866, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave"]
+position = Vector2(20.5, 20)
+shape = SubResource("RectangleShape2D_y32ns")
