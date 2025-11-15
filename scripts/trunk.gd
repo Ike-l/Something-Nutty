@@ -46,7 +46,8 @@ func _ready():
 			direction = Direction.RIGHT
 			
 		# get location from offset from self
-		$"../Trunk/ColorRect".shape.extents = Vector2(500, 500)
+		$"../Trunk/CollisionShape2D".shape.extents = Vector2(500, 500)
+		print($"../Trunk/CollisionShape2D".shape.extents)
 		#location.x = 
 		#location.y
 		spawn_branch(location, direction)
