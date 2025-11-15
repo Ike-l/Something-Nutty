@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=10 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="Script" uid="uid://uneul5dvesy4" path="res://scripts/dave.gd" id="2_0psjf"]
@@ -10,10 +10,13 @@
 size = Vector2(41, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysate"]
-size = Vector2(40, 41)
+size = Vector2(17.500004, 11.890001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yrbd"]
-size = Vector2(93.875, 81.50784)
+size = Vector2(28.9375, 23.753891)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0psjf"]
+size = Vector2(6.5, 14)
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
@@ -22,35 +25,121 @@ script = ExtResource("1_d5dl1")
 script = ExtResource("2_0psjf")
 
 [node name="ColorRect" type="ColorRect" parent="Dave"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 630.0
+offset_top = 594.0
+offset_right = 670.0
+offset_bottom = 634.0
 color = Color(1, 0.52156866, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dave"]
-position = Vector2(20.5, 20)
+position = Vector2(648, 613)
 shape = SubResource("RectangleShape2D_a3oai")
 
 [node name="Trunk" type="Area2D" parent="."]
 script = ExtResource("3_yw8f4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trunk"]
-position = Vector2(448, 357)
+z_index = -1
+position = Vector2(575.25, 326.25)
+scale = Vector2(5, 50)
 shape = SubResource("RectangleShape2D_ysate")
 
 [node name="ColorRect" type="ColorRect" parent="Trunk"]
-offset_left = 429.0
-offset_top = 337.0
-offset_right = 469.0
-offset_bottom = 377.0
+z_index = -1
+offset_left = 533.0
+offset_top = 31.0
+offset_right = 550.0
+offset_bottom = 42.860016
+scale = Vector2(5, 50)
 
 [node name="Sir Nut" type="CharacterBody2D" parent="."]
 script = ExtResource("4_jtak5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sir Nut"]
-position = Vector2(560, 315)
+position = Vector2(483.99997, 444.5)
 shape = SubResource("RectangleShape2D_7yrbd")
 
 [node name="SirNut" type="Sprite2D" parent="Sir Nut"]
-position = Vector2(562, 319)
-scale = Vector2(0.052246626, 0.055664066)
+position = Vector2(486, 445.00003)
+scale = Vector2(0.01985369, 0.017333996)
 texture = ExtResource("5_3drpd")
+
+[node name="Branch0" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch0"]
+position = Vector2(465, 570)
+scale = Vector2(20, 1)
+shape = SubResource("RectangleShape2D_0psjf")
+
+[node name="ColorRect" type="ColorRect" parent="Branch0"]
+offset_left = 401.00006
+offset_top = 565.0
+offset_right = 407.40005
+offset_bottom = 576.0
+scale = Vector2(20, 1)
+color = Color(1, 0.42745098, 0.3529412, 1)
+
+[node name="Branch4" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch4"]
+position = Vector2(683, 552)
+scale = Vector2(20, 1)
+shape = SubResource("RectangleShape2D_0psjf")
+
+[node name="ColorRect" type="ColorRect" parent="Branch4"]
+offset_left = 620.0
+offset_top = 547.0
+offset_right = 626.4
+offset_bottom = 558.0
+scale = Vector2(20, 1)
+color = Color(1, 0.42745098, 0.3529412, 1)
+
+[node name="Branch1" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch1"]
+position = Vector2(465, 523)
+scale = Vector2(20, 1)
+shape = SubResource("RectangleShape2D_0psjf")
+
+[node name="ColorRect" type="ColorRect" parent="Branch1"]
+offset_left = 403.0
+offset_top = 518.0
+offset_right = 409.4
+offset_bottom = 529.0
+scale = Vector2(20, 1)
+color = Color(1, 0.42745098, 0.3529412, 1)
+
+[node name="Branch2" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch2"]
+position = Vector2(466, 474)
+scale = Vector2(20, 1)
+shape = SubResource("RectangleShape2D_0psjf")
+
+[node name="ColorRect" type="ColorRect" parent="Branch2"]
+offset_left = 404.0
+offset_top = 468.0
+offset_right = 410.4
+offset_bottom = 479.0
+scale = Vector2(20, 1)
+color = Color(1, 0.42745098, 0.3529412, 1)
+
+[node name="Branch3" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch3"]
+position = Vector2(682, 499)
+scale = Vector2(20, 1)
+shape = SubResource("RectangleShape2D_0psjf")
+
+[node name="ColorRect" type="ColorRect" parent="Branch3"]
+offset_left = 621.0
+offset_top = 494.0
+offset_right = 627.4
+offset_bottom = 505.0
+scale = Vector2(20, 1)
+color = Color(1, 0.42745098, 0.3529412, 1)

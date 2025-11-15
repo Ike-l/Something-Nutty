@@ -12,8 +12,10 @@ var facing_dirty = false
 var nuts = 0
 
 func set_branch(new_position: Vector2):
+	print(position)
 	position.x = new_position.x
 	position.y = new_position.y
+	print(position)
 
 func _process(delta: float) -> void:
 	if facing_dirty:
