@@ -7,3 +7,5 @@ func _ready():
 	dave = get_node("dave")
 	sir_nut = get_node("sir_nut")
 	
+	dave.nut = 1
+	dave.set_nuts(100)

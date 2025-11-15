@@ -1,11 +1,25 @@
 extends RigidBody2D
 
+enum State {
+	Aggressive,
+	Reloading,
+	Evasive,
+}
 
-# Called when the node enters the scene tree for the first time.
+var state
+
+@export
+var nuts = 0
+
+func tick(state: State) -> void:
+	pass
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	state = State.Reloading
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	tick(state)
 	pass
