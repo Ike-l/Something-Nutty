@@ -1,7 +1,7 @@
 extends CharacterBody2D
 signal SirNutCollision
 const SirNutCollisionLabel = "SirNutCollision"
-@onready var trunk: RigidBody2D = $"Trunk"
+@onready var trunk: RigidBody2D = $"Tree/Trunk"
 
 var speed = 100
 const JUMP_VELOCITY = -400.0
@@ -15,7 +15,6 @@ var facing_dirty = false
 var nuts = 0
 
 func _ready() -> void:
-	$""
 	trunk.connect(SirNutCollisionLabel, Callable(trunk, "collided"))
 
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=5 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://dbh8h2v5ecldx" path="res://scenes/dave.tscn" id="2_hlc4h"]
 [ext_resource type="PackedScene" uid="uid://dmsb8os34yp3b" path="res://scenes/sir_nut.tscn" id="3_0psjf"]
+[ext_resource type="PackedScene" uid="uid://cv74vk0pufhai" path="res://scenes/tree.tscn" id="4_hlc4h"]
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
@@ -10,3 +11,5 @@ script = ExtResource("1_d5dl1")
 [node name="dave" parent="." instance=ExtResource("2_hlc4h")]
 
 [node name="sir_nut" parent="." instance=ExtResource("3_0psjf")]
+
+[node name="Tree" parent="." instance=ExtResource("4_hlc4h")]
