@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=24 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
 [ext_resource type="Texture2D" uid="uid://132q8nexmu3y" path="res://assets/SquirrelFrame2.png" id="5_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://bcj8o2vbu7efn" path="res://assets/SquirrelFrame3.png" id="6_ofm7x"]
+[ext_resource type="Texture2D" uid="uid://dvpa2sxst4rrk" path="res://assets/SirNut.png" id="7_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
@@ -15,16 +16,32 @@
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofm7x"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80s2q"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3am05"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1afuj"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(800, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375xh"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p5pf"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 640, 400, 320)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cofmf"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_yyxhd")
-}],
-"loop": true,
-"name": &"Crouch",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 20.0,
 "texture": ExtResource("3_0psjf")
@@ -36,8 +53,42 @@ animations = [{
 "texture": ExtResource("6_ofm7x")
 }],
 "loop": true,
-"name": &"blinking",
+"name": &"Blink",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yyxhd")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofm7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80s2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3am05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1afuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_375xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0psjf")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0uwl"]
@@ -93,9 +144,10 @@ scale = Vector2(0.35, 0.298)
 texture = ExtResource("3_0psjf")
 
 [node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut"]
+position = Vector2(-1350, 157)
 sprite_frames = SubResource("SpriteFrames_cofmf")
-animation = &"blinking"
-frame_progress = 0.083187304
+animation = &"Jump"
+frame_progress = 0.586635
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
