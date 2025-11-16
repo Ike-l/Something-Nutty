@@ -7,7 +7,7 @@ func _ready() -> void:
 
 var current_branch = 0
 
-var cooldown_time := 10.0
+var cooldown_time := 1.0
 var can_hit := true
 
 var rng = RandomNumberGenerator.new()

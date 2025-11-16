@@ -30,8 +30,9 @@ func _on_timer_timeout() -> void:
 		
 	match curr_state:
 		state.moving:
-			self.play("walk_right")
+			self.play("WalkRight")
 		state.idle:
-			self.play("default")
+			self.play("default-Blink")
 		state.throwing:
 			self.play("Throw")
+	print(curr_state)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://eof2l0m70uh6"]
+[gd_scene load_steps=14 format=3 uid="uid://eof2l0m70uh6"]
 
 [ext_resource type="Texture2D" uid="uid://cijo1svyqia6p" path="res://assets/BranchEndLeaves.png" id="1_pikbw"]
 [ext_resource type="Texture2D" uid="uid://b8hnc100yr54d" path="res://assets/longBranch.png" id="1_wr6xk"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqdss"]
 size = Vector2(263.25, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4cca"]
+size = Vector2(20.375, 94.3125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wr6xk"]
 size = Vector2(263.25, 24)
@@ -41,6 +44,10 @@ position = Vector2(-18, 6)
 scale = Vector2(-0.6, 0.3)
 texture = ExtResource("1_pikbw")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D0"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
+
 [node name="RigidBody2D1" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D1"]
@@ -50,6 +57,14 @@ shape = SubResource("RectangleShape2D_wr6xk")
 position = Vector2(18, 6)
 scale = Vector2(0.6, 0.3)
 texture = ExtResource("2_fqdss")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D1"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D1"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
 
 [node name="RigidBody2D2" type="StaticBody2D" parent="."]
 
@@ -61,6 +76,10 @@ position = Vector2(19, -6)
 scale = Vector2(-0.5, 0.3)
 texture = ExtResource("1_wr6xk")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
+
 [node name="RigidBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
@@ -70,6 +89,10 @@ shape = SubResource("RectangleShape2D_pikbw")
 position = Vector2(-17, -6)
 scale = Vector2(0.5, 0.3)
 texture = ExtResource("1_wr6xk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
 
 [node name="RigidBody2D4" type="StaticBody2D" parent="."]
 
@@ -81,6 +104,10 @@ position = Vector2(-7, 6)
 scale = Vector2(-0.35, 0.3)
 texture = ExtResource("3_dgup6")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D4"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
+
 [node name="RigidBody2D5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
@@ -90,6 +117,10 @@ shape = SubResource("RectangleShape2D_mrgbw")
 position = Vector2(-17, -6)
 scale = Vector2(0.35, 0.3)
 texture = ExtResource("1_wr6xk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D5"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
 
 [node name="RigidBody2D6" type="StaticBody2D" parent="."]
 
@@ -101,6 +132,10 @@ position = Vector2(17, -6)
 scale = Vector2(-0.3, 0.3)
 texture = ExtResource("1_wr6xk")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D6"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
+
 [node name="RigidBody2D7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7"]
@@ -110,3 +145,7 @@ shape = SubResource("RectangleShape2D_v7vfj")
 position = Vector2(-17, -6)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_wr6xk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D7"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_b4cca")
