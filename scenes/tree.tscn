@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://binuyqm458jt6"]
+[gd_scene load_steps=5 format=3 uid="uid://binuyqm458jt6"]
 
 [ext_resource type="PackedScene" uid="uid://eof2l0m70uh6" path="res://scenes/Branches.tscn" id="1_2cic4"]
+[ext_resource type="Texture2D" uid="uid://tyovodgbibc6" path="res://assets/trunk.png" id="1_omb14"]
 
 [sub_resource type="GDScript" id="GDScript_omb14"]
 script/source = "extends Node2D
@@ -18,7 +19,7 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3xqg"]
-size = Vector2(36, 461)
+size = Vector2(36, 454.5)
 
 [node name="Tree" type="Node2D"]
 script = SubResource("GDScript_omb14")
@@ -27,80 +28,12 @@ script = SubResource("GDScript_omb14")
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(1, -62)
 shape = SubResource("RectangleShape2D_t3xqg")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D/CollisionShape2D"]
-offset_left = -20.0
-offset_top = -231.0
-offset_right = 20.0
-offset_bottom = -200.33333
-scale = Vector2(1, 15)
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+scale = Vector2(0.15, 0.3)
+texture = ExtResource("1_omb14")
 
 [node name="Branches" parent="." instance=ExtResource("1_2cic4")]
-
-[node name="RigidBody2D1" parent="Branches" index="0"]
-position = Vector2(34, -243)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D1" index="0"]
-position = Vector2(94, 20)
-
-[node name="RigidBody2D2" parent="Branches" index="1"]
-position = Vector2(-34, -157)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D2" index="0"]
-position = Vector2(-95, 25)
-
-[node name="ColorRect" parent="Branches/RigidBody2D2/CollisionShape2D" index="0"]
-offset_left = -108.5
-offset_right = 106.5
-
-[node name="RigidBody2D3" parent="Branches" index="2"]
-position = Vector2(37, -155)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D3" index="0"]
-position = Vector2(92, 24)
-
-[node name="ColorRect" parent="Branches/RigidBody2D3/CollisionShape2D" index="0"]
-offset_left = -106.0
-
-[node name="RigidBody2D4" parent="Branches" index="3"]
-position = Vector2(-34, -67)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D4" index="0"]
-position = Vector2(-93, 26)
-
-[node name="ColorRect" parent="Branches/RigidBody2D4/CollisionShape2D" index="0"]
-offset_left = -106.0
-
-[node name="RigidBody2D5" parent="Branches" index="4"]
-position = Vector2(33, -63)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D5" index="0"]
-position = Vector2(96, 23)
-
-[node name="ColorRect" parent="Branches/RigidBody2D5/CollisionShape2D" index="0"]
-offset_left = -105.0
-offset_top = -12.0
-offset_right = 107.0
-offset_bottom = 13.0
-
-[node name="RigidBody2D6" parent="Branches" index="5"]
-position = Vector2(-40, 28)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D6" index="0"]
-position = Vector2(-87, 29)
-
-[node name="RigidBody2D7" parent="Branches" index="6"]
-position = Vector2(45, 32)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D7" index="0"]
-position = Vector2(84, 26)
-
-[node name="RigidBody2D0" parent="Branches" index="7"]
-position = Vector2(-33, -246)
-
-[node name="CollisionShape2D" parent="Branches/RigidBody2D0" index="0"]
-position = Vector2(-94, 23)
 
 [editable path="Branches"]

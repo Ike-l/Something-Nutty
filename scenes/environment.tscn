@@ -1,31 +1,92 @@
-[gd_scene load_steps=19 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=37 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
-[ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://scenes/Trunk.gd" id="4_hlc4h"]
+[ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
 [ext_resource type="Texture2D" uid="uid://132q8nexmu3y" path="res://assets/SquirrelFrame2.png" id="5_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://bcj8o2vbu7efn" path="res://assets/SquirrelFrame3.png" id="6_ofm7x"]
+[ext_resource type="Texture2D" uid="uid://dvpa2sxst4rrk" path="res://assets/SirNut.png" id="7_dmsi2"]
+[ext_resource type="Texture2D" uid="uid://d13jmt47ju38c" path="res://assets/SirNut (1).png" id="7_ofm7x"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8dep"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cofmf"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(800, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0uwl"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwu6h"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rpxt"]
+atlas = ExtResource("7_ofm7x")
+region = Rect2(0, 960, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhcem"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(800, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofm7x"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 0, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80s2q"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3am05"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1afuj"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(800, 320, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375xh"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p5pf"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5y12"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(800, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqnwj"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 960, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vexs"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(400, 640, 400, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om7ee"]
+atlas = ExtResource("7_dmsi2")
+region = Rect2(0, 0, 400, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cofmf"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_yyxhd")
-}],
-"loop": true,
-"name": &"Crouch",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 20.0,
 "texture": ExtResource("3_0psjf")
@@ -37,13 +98,97 @@ animations = [{
 "texture": ExtResource("6_ofm7x")
 }],
 "loop": true,
-"name": &"blinking",
+"name": &"Blink",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmsi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8dep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cofmf")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_dmsi2")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_f0uwl")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_dmsi2")
+}],
+"loop": true,
+"name": &"Blink&Bounce",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwu6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rpxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhcem")
+}],
+"loop": true,
+"name": &"Catch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yyxhd")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofm7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80s2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3am05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1afuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_375xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p5pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofm7x")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5y12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqnwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vexs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om7ee")
+}],
+"loop": true,
+"name": &"Throw",
+"speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofm7x"]
-radius = 134.0
-height = 298.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0uwl"]
 animations = [{
@@ -56,9 +201,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_1afuj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_375xh")
 }],
 "loop": true,
 "name": &"Throw",
@@ -75,15 +217,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("13_6p5pf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_6p5pf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_6p5pf")
 }],
 "loop": true,
-"name": &"walk_left",
+"name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -91,25 +227,32 @@ animations = [{
 "texture": ExtResource("14_t8dep")
 }],
 "loop": true,
-"name": &"walk_right",
+"name": &"right",
 "speed": 2.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofm7x"]
+size = Vector2(151.25, 236)
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
 
 [node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
-position = Vector2(380, 40)
+position = Vector2(375, -20)
+
+[node name="CollisionShape2D" parent="SirNut/Sir Nut" index="0"]
+position = Vector2(6, 1)
 
 [node name="SirNut" parent="SirNut/Sir Nut" index="1"]
 editor_description = "Sir Nut standing frame"
-scale = Vector2(0.35, 0.298)
+scale = Vector2(0.2, 0.17)
 texture = ExtResource("3_0psjf")
 
 [node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut"]
+position = Vector2(-1350, 157)
 sprite_frames = SubResource("SpriteFrames_cofmf")
-animation = &"blinking"
-frame_progress = 0.083187304
+animation = &"Catch"
+frame_progress = 0.8652976
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
@@ -120,78 +263,69 @@ disable_mode = 1
 script = ExtResource("4_hlc4h")
 
 [node name="CollisionShape2D" parent="Tree/RigidBody2D" index="0"]
-position = Vector2(1, -90.5)
-
-[node name="ColorRect" parent="Tree/RigidBody2D/CollisionShape2D" index="0"]
-offset_top = -230.5
-offset_bottom = -199.76666
+position = Vector2(1, -91)
+debug_color = Color(0, 0, 0, 1)
 
 [node name="RigidBody2D1" parent="Tree/Branches" index="0"]
-position = Vector2(40, -243)
+position = Vector2(44, -287)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D1" index="0"]
-position = Vector2(91, 29)
+position = Vector2(85, 24)
 
 [node name="RigidBody2D2" parent="Tree/Branches" index="1"]
-position = Vector2(-40, -155)
+position = Vector2(-35, -205)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D2" index="0"]
-position = Vector2(-91, 25)
+position = Vector2(-94, 23)
 
 [node name="RigidBody2D3" parent="Tree/Branches" index="2"]
-position = Vector2(43, -150)
+position = Vector2(38, -203)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D3" index="0"]
-position = Vector2(88, 27)
+position = Vector2(91, 21)
 
 [node name="RigidBody2D4" parent="Tree/Branches" index="3"]
-position = Vector2(-41, -65)
+position = Vector2(-33, -128)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D4" index="0"]
-position = Vector2(-88, 26)
+position = Vector2(-94, 24)
 
 [node name="RigidBody2D5" parent="Tree/Branches" index="4"]
-position = Vector2(40, -62)
+position = Vector2(36, -124)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D5" index="0"]
-position = Vector2(91, 28)
+position = Vector2(93, 21)
 
 [node name="RigidBody2D6" parent="Tree/Branches" index="5"]
-position = Vector2(-47, 29)
+position = Vector2(-35, -49)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D6" index="0"]
-position = Vector2(-83, 29)
+position = Vector2(-92, 24)
 
 [node name="RigidBody2D7" parent="Tree/Branches" index="6"]
-position = Vector2(52, 32)
+position = Vector2(35, -46)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D7" index="0"]
-position = Vector2(79, 28)
+position = Vector2(94, 21)
 
 [node name="RigidBody2D0" parent="Tree/Branches" index="7"]
-position = Vector2(-44, -244)
+position = Vector2(-39, -287)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="0"]
-position = Vector2(-84, 26)
+position = Vector2(-88, 24)
 
 [node name="Dave" type="Node2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave"]
-position = Vector2(463, 611)
-shape = SubResource("CapsuleShape2D_ofm7x")
+position = Vector2(437, 599)
 
 [node name="Dave" type="AnimatedSprite2D" parent="Dave"]
-position = Vector2(464, 603.00006)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
-animation = &"walk_left"
-script = ExtResource("15_dmsi2")
 
-[node name="Timer" type="Timer" parent="Dave"]
-wait_time = 1.5
-autostart = true
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Dave"]
 
-[connection signal="timeout" from="Dave/Timer" to="Dave/Dave" method="_on_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave/CharacterBody2D"]
+position = Vector2(-31, 20)
+shape = SubResource("RectangleShape2D_ofm7x")
 
 [editable path="SirNut"]
 [editable path="Tree"]
