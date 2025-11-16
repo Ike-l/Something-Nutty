@@ -19,6 +19,7 @@ offset_left = 419.0
 offset_top = 370.0
 offset_right = 931.0
 offset_bottom = 434.0
+theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("1_fb70i")
 
@@ -31,13 +32,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_kmax6")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_fgoeh")
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 96.0
+offset_right = 646.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 48
+text = "Something Nutty"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
