@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bievc6vxo4bh7"]
 
-[ext_resource type="Script" path="res://nut.gd" id="1_4d5p4"]
+[ext_resource type="Script" uid="uid://cpxavvjlrb7gt" path="res://nut.gd" id="1_4d5p4"]
 [ext_resource type="Texture2D" uid="uid://b84yu63go1bt1" path="res://assets/nut.png" id="2_3oi6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxtfq"]
