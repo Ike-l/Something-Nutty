@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=49 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -20,7 +20,15 @@
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
 [ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
+[ext_resource type="Texture2D" uid="uid://b0jt71cwkifd0" path="res://assets/DaveWalk1.png" id="18_bwu6h"]
 [ext_resource type="Texture2D" uid="uid://dhk8sfuuxnypq" path="res://assets/DaveBlink.png" id="19_cofmf"]
+[ext_resource type="Texture2D" uid="uid://civykadgfh1vx" path="res://assets/DaveWalk2.png" id="19_qhcem"]
+[ext_resource type="Texture2D" uid="uid://b0045tkpuh0s7" path="res://assets/DaveWalk3.png" id="20_l5y12"]
+[ext_resource type="Texture2D" uid="uid://cgadm465fdlb8" path="res://assets/DaveWalk4.png" id="21_oqnwj"]
+[ext_resource type="Texture2D" uid="uid://bmndcrk4vy4cp" path="res://assets/DaveWalkRight1.png" id="22_2vexs"]
+[ext_resource type="Texture2D" uid="uid://cfeckib1vg4go" path="res://assets/DaveWalkRight2.png" id="23_om7ee"]
+[ext_resource type="Texture2D" uid="uid://cybd2bf3p76vl" path="res://assets/DaveWalkRight3.png" id="24_6rpxt"]
+[ext_resource type="Texture2D" uid="uid://5oygqvauw4ec" path="res://assets/DaveWalkRight4.png" id="25_qrvva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
 atlas = ExtResource("7_dmsi2")
@@ -240,6 +248,43 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": ExtResource("12_6p5pf")
+}, {
+"duration": 2.0,
+"texture": ExtResource("18_bwu6h")
+}, {
+"duration": 2.0,
+"texture": ExtResource("19_qhcem")
+}, {
+"duration": 2.0,
+"texture": ExtResource("20_l5y12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_oqnwj")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("22_2vexs")
+}, {
+"duration": 2.0,
+"texture": ExtResource("23_om7ee")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_6rpxt")
+}, {
+"duration": 3.0,
+"texture": ExtResource("25_qrvva")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 10.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_375xh")
 }, {
@@ -389,8 +434,9 @@ position = Vector2(437, 599)
 position = Vector2(-68.99999, -78.99999)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
-animation = &"default-Blink"
-frame_progress = 0.6365796
+animation = &"WalkRight"
+frame = 3
+frame_progress = 0.75104165
 script = ExtResource("15_dmsi2")
 
 [node name="Timer" type="Timer" parent="Dave"]
