@@ -9,3 +9,7 @@ func _ready():
 	#sir_nut = get_node("Sir Nut")
 	
 	
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
