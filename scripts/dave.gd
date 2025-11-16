@@ -34,9 +34,9 @@ func _physics_process(delta):
 			#animated_dave.play("WalkLeft")
 			##velocity.x = speed
 		var direction = $"../../SirNut".find_child("Sir Nut").global_position.x - global_position.x
-		if direction == 0:
+		if direction == -60:
 			print()
-		elif direction > 0:
+		elif direction > -60:
 			velocity.x = speed * delta
 		else:
 			velocity.x = -speed * delta
