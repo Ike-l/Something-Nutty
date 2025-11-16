@@ -235,11 +235,14 @@ animations = [{
 script = ExtResource("1_d5dl1")
 
 [node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
-position = Vector2(377, 16)
+position = Vector2(375, -20)
+
+[node name="CollisionShape2D" parent="SirNut/Sir Nut" index="0"]
+position = Vector2(-0.328125, -2.484375)
 
 [node name="SirNut" parent="SirNut/Sir Nut" index="1"]
 editor_description = "Sir Nut standing frame"
-scale = Vector2(0.35, 0.298)
+scale = Vector2(0.2, 0.17)
 texture = ExtResource("3_0psjf")
 
 [node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut"]
