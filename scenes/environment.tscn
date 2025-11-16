@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
-[ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://c54ve83yv0qm2" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
-[ext_resource type="Script" uid="uid://dgfx3e8typrym" path="res://scripts/animated_sir_nut.gd" id="10_1afuj"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
 [ext_resource type="Texture2D" uid="uid://d17shqv3vcr4u" path="res://assets/Treetop.png" id="11_om7ee"]

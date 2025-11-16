@@ -9,14 +9,28 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	if rng.randf() <0.5:
+		speed *= -1 #left
 
 
 
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	if curr_state == state.moving:
-		velocity.x = speed
+		if position.x <= 0 and speed <0:
+			speed *= -1 
+			self.play("WalkRight")
+		elif position.x > screen_size.x and speed > 0:
+			speed *= -1
+			self.play("WalkLeft")
+			#velocity.x = speed
+		position += Vector2(speed*delta, 0)
 	
+	
+#func _physics_process(delta):
+	#if curr_state == state.moving:
+		## Directly update the node's position
+		#position += Vector2(speed * delta, 0)
 
 
 func _on_timer_timeout() -> void:
