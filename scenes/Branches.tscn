@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://eof2l0m70uh6"]
+[gd_scene load_steps=5 format=3 uid="uid://eof2l0m70uh6"]
+
+[ext_resource type="Texture2D" uid="uid://b8hnc100yr54d" path="res://assets/longBranch.png" id="1_wr6xk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0116v"]
 size = Vector2(214, 24)
@@ -16,85 +18,77 @@ size = Vector2(214, 24)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D1"]
 shape = SubResource("RectangleShape2D_0116v")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D1/CollisionShape2D"]
-offset_left = -107.0
-offset_top = -11.0
-offset_right = 105.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D1/CollisionShape2D"]
+position = Vector2(-17, -6)
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 shape = SubResource("RectangleShape2D_wr6xk")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D2/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D"]
+position = Vector2(19, -6)
+scale = Vector2(-0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D3/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3/CollisionShape2D"]
+position = Vector2(-17, -6)
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D4/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4/CollisionShape2D"]
+position = Vector2(17, -6)
+scale = Vector2(-0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D5/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5/CollisionShape2D"]
+position = Vector2(-17, -6)
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D6/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D6/CollisionShape2D"]
+position = Vector2(17, -6)
+scale = Vector2(-0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D7/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D7/CollisionShape2D"]
+position = Vector2(-17, -6)
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("1_wr6xk")
 
 [node name="RigidBody2D0" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D0"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D0/CollisionShape2D"]
-offset_left = -104.0
-offset_top = -11.0
-offset_right = 108.0
-offset_bottom = 14.0
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D0/CollisionShape2D"]
+position = Vector2(17, -6)
+scale = Vector2(-0.5, 0.3)
+texture = ExtResource("1_wr6xk")
