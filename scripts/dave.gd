@@ -17,6 +17,7 @@ func _ready():
 	animated_dave = get_node("AnimatedDave")
 	curr_state = animated_dave.curr_state
 	screen_size = get_viewport_rect().size
+	
 	if rng.randf() <0.5:
 		speed *= -1 #left
 
@@ -25,23 +26,33 @@ func _ready():
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	if curr_state == state.moving:
-		if position.x <= 0 and speed <0:
-			speed *= -1 
+		#if position.x <= 0 and speed <0:
+			#speed *= -1 
+			#animated_dave.play("WalkRight")
+		#elif position.x > screen_size.x and speed > 0:
+			#speed *= -1
+			#animated_dave.play("WalkLeft")
+			##velocity.x = speed
+		var direction = $"../../SirNut".find_child("Sir Nut").global_position.x - global_position.x
+		if direction == 0:
+			print()
+		elif direction > 0:
+			velocity.x = speed * delta
+		else:
+			velocity.x = -speed * delta
+		# (player.x - position.x)
+		
+		if (position + velocity).x < -137:
+			speed *= -1
 			animated_dave.play("WalkRight")
-		elif position.x > screen_size.x and speed > 0:
+		elif (position + velocity).x > 500:
 			speed *= -1
 			animated_dave.play("WalkLeft")
-			#velocity.x = speed
-		
-		if (position + Vector2(speed*delta, 0)).x < -137:
-			speed *= -1
-			self.play("WalkRight")
-		elif (position + Vector2(speed*delta, 0)).x > 500:
-			speed *= -1
-			self.play("WalkLeft")
 
-		position += Vector2(speed*delta, 0)
-	animated_dave.flip_h = speed < 0
+		position += velocity
+		
+	
+	animated_dave.flip_h = velocity.x < 0
 	
 
 func fire_nut(): 
@@ -52,11 +63,6 @@ func fire_nut():
 		print(curr_state)
 
 func _on_timer_timeout() -> void:
-	var rand_num = rng.randi_range(0, 2)
-	if rand_num == 0:
-		curr_state = state.moving
-	elif rand_num == 1:
-		curr_state = state.idle
-	elif rand_num == 2:
-		curr_state = state.throwing
+	curr_state = [state.moving, state.idle, state.throwing][rng.rand_weighted([1, 0.1, 2])]
+	if curr_state == state.throwing:
 		fire_nut()
