@@ -10,6 +10,7 @@ var current_branch = 0
 var cooldown_time := 1.0
 var can_hit := true
 
+var rng = RandomNumberGenerator.new()
 
 func sir_nut_hit_the_second_tower():
 	if not can_hit:
@@ -24,9 +25,9 @@ func sir_nut_hit_the_second_tower():
 	add_child(t)
 	t.start()
 	
-	print("B")
-	current_branch = (current_branch + 1) % 8
-	var next_branch = current_branch
+	var direction = [-1, 1][rng.rand_weighted([1, 0.975])]
+	var next_branch = clamp(current_branch + direction, 0, 7)
+	current_branch = next_branch
 	var node = get_node("../Branches/RigidBody2D" + str(next_branch))
 	
 	var next_position = node.global_position
