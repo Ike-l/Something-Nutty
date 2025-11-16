@@ -292,7 +292,7 @@ frame_progress = 0.8652976
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
-position = Vector2(596, 420)
+position = Vector2(596, 421)
 
 [node name="RigidBody2D" parent="Tree" index="0"]
 disable_mode = 1
@@ -398,6 +398,7 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
+follow_viewport_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_right = 40.0

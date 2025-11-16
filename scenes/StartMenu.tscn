@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bepy1w7evij2f"]
+[gd_scene load_steps=3 format=3 uid="uid://bepy1w7evij2f"]
 
 [ext_resource type="Script" uid="uid://lia1clw2up0h" path="res://scenes/start.gd" id="1_fb70i"]
+[ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="2_kmax6"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -11,11 +12,27 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
+z_index = 3
 layout_mode = 0
-offset_left = 587.0
-offset_top = 335.0
-offset_right = 651.0
-offset_bottom = 399.0
+offset_left = 419.0
+offset_top = 370.0
+offset_right = 931.0
+offset_bottom = 434.0
+text = "Start"
 script = ExtResource("1_fb70i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kmax6")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
