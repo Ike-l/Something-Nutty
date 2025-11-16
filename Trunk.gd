@@ -25,10 +25,11 @@ func sir_nut_hit_the_second_tower():
 	add_child(t)
 	t.start()
 	
-	current_branch = (clamp(current_branch + 1, 0, 7))
-	var node = get_node("../Branches/RigidBody2D" + str(current_branch))
+	current_branch = (clamp(current_branch + 1, 0, 8))
 	
+	var node = get_node("../Branches/RigidBody2D" + str(current_branch))
 	var next_position = node.global_position
+	
 	var sir_nut: CharacterBody2D = $"../../SirNut".find_child("Sir Nut")
 
 	sir_nut.global_position = next_position

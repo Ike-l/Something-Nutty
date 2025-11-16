@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
-[ext_resource type="PackedScene" uid="uid://c54ve83yv0qm2" path="res://scenes/nut.tscn" id="3_f0uwl"]
+[ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
@@ -174,7 +174,7 @@ disable_mode = 1
 script = ExtResource("4_hlc4h")
 
 [node name="CollisionShape2D" parent="Tree/RigidBody2D" index="0"]
-position = Vector2(1, -91)
+position = Vector2(1, -59.625)
 debug_color = Color(0, 0, 0, 1)
 
 [node name="RigidBody2D0" parent="Tree/Branches" index="0"]
@@ -291,6 +291,18 @@ scale = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D3" parent="Tree/Branches/RigidBody2D7" index="2"]
 position = Vector2(124, -36)
+
+[node name="RigidBody2D8" parent="Tree/Branches" index="8"]
+position = Vector2(98, 150)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D8" index="0"]
+position = Vector2(14, 53)
+
+[node name="CollisionShape2D2" parent="Tree/Branches/RigidBody2D8" index="1"]
+position = Vector2(70, -22)
+
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D8" index="2"]
+position = Vector2(-89.99999, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Tree"]
 offset_left = -678.0

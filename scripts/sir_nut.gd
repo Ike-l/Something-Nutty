@@ -55,9 +55,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x += 1
 		new_state = animated_sir_nut.State.moving
 		
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-		new_state = animated_sir_nut.State.moving
+	#if Input.is_action_pressed("move_down"):
+		#velocity.y += 1
+		#new_state = animated_sir_nut.State.moving
 		
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 5
@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		
-	
+	animated_sir_nut.flip_h = velocity.x < 0
 	
 	animated_sir_nut.curr_state = new_state
 	move_and_slide()
