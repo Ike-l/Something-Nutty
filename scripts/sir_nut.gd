@@ -7,7 +7,7 @@ const gravitational_acceleration = 2
 @onready var nut_spawn_point = $"nut_spawn_point"
 @onready var animated_sir_nut = $"AnimatedSirNut"
 #enum state {idle, jumping, catching, throwing, moving}
-var storage = 0
+var storage = 10
 func fire_nut(): 
 	if storage > 0:
 		storage -= 1
@@ -55,13 +55,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x += 1
 		new_state = animated_sir_nut.State.moving
 		
-	#if Input.is_action_pressed("move_down"):
-		#velocity.y += 1
-		#new_state = animated_sir_nut.State.moving
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+		new_state = animated_sir_nut.State.moving
 		
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 5
-		new_state = animated_sir_nut.State.jumping
+	#if Input.is_action_pressed("move_up"):
+		#velocity.y -= 5
+		#new_state = animated_sir_nut.State.jumping
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

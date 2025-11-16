@@ -1,8 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=33 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cfeckib1vg4go" path="res://assets/DaveWalkRight2.png" id="23_om7ee"]
 [ext_resource type="Texture2D" uid="uid://cybd2bf3p76vl" path="res://assets/DaveWalkRight3.png" id="24_6rpxt"]
 [ext_resource type="Texture2D" uid="uid://5oygqvauw4ec" path="res://assets/DaveWalkRight4.png" id="25_qrvva"]
+[ext_resource type="Script" uid="uid://bfxa2k2sp2mpk" path="res://scenes/button.gd" id="26_qhcem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0uwl"]
 size = Vector2(292, 21.375)
@@ -335,7 +336,38 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("18_3am05")
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+z_index = 8
+layout_mode = 0
+offset_left = 235.0
+offset_top = 217.0
+offset_right = 969.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0.012617188, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="Control"]
+z_index = 6
+layout_mode = 0
+offset_left = 448.0
+offset_top = 420.0
+offset_right = 757.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 48
+text = "RESTART"
+script = ExtResource("26_qhcem")
+
 [connection signal="timeout" from="Dave/Timer" to="Dave/Dave" method="_on_timer_timeout"]
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 
 [editable path="SirNut"]
 [editable path="Tree"]
