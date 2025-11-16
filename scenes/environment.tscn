@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
 [ext_resource type="Texture2D" uid="uid://132q8nexmu3y" path="res://assets/SquirrelFrame2.png" id="5_dmsi2"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://s3j5dti4h32r" path="res://assets/DaveCrouchRight.png" id="13_t8dep"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
 [ext_resource type="Texture2D" uid="uid://b0jt71cwkifd0" path="res://assets/DaveWalk1.png" id="18_bwu6h"]
 [ext_resource type="Texture2D" uid="uid://dhk8sfuuxnypq" path="res://assets/DaveBlink.png" id="19_cofmf"]
@@ -337,7 +337,7 @@ frame_progress = 0.8652976
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
-position = Vector2(594, 322)
+position = Vector2(596, 420)
 
 [node name="RigidBody2D" parent="Tree" index="0"]
 disable_mode = 1
@@ -348,52 +348,84 @@ position = Vector2(1, -91)
 debug_color = Color(0, 0, 0, 1)
 
 [node name="RigidBody2D0" parent="Tree/Branches" index="0"]
-position = Vector2(-39, -287)
+position = Vector2(-63, -289)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="0"]
 position = Vector2(-88, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D0" index="1"]
+position = Vector2(52, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D1" parent="Tree/Branches" index="1"]
-position = Vector2(44, -287)
+position = Vector2(69, -257)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D1" index="0"]
 position = Vector2(83, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D1" index="1"]
+position = Vector2(-60, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D2" parent="Tree/Branches" index="2"]
-position = Vector2(-35, -205)
+position = Vector2(-35, -214)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D2" index="0"]
 position = Vector2(-92, 23)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D2" index="1"]
+position = Vector2(21, 1)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D3" parent="Tree/Branches" index="3"]
-position = Vector2(38, -203)
+position = Vector2(38, -181)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D3" index="0"]
 position = Vector2(88, 21)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D3" index="1"]
+position = Vector2(-26.999998, -3.9999998)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D4" parent="Tree/Branches" index="4"]
-position = Vector2(-33, -128)
+position = Vector2(-33, -132)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D4" index="0"]
 position = Vector2(-65, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D4" index="1"]
+position = Vector2(25, 1)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D5" parent="Tree/Branches" index="5"]
-position = Vector2(36, -124)
+position = Vector2(37, -71)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D5" index="0"]
 position = Vector2(62, 21)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D5" index="1"]
+position = Vector2(-27, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D6" parent="Tree/Branches" index="6"]
-position = Vector2(-35, -49)
+position = Vector2(-35, -13)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D6" index="0"]
 position = Vector2(-55, 23)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D6" index="1"]
+position = Vector2(24, 0)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D7" parent="Tree/Branches" index="7"]
-position = Vector2(35, -46)
+position = Vector2(34, 45)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D7" index="0"]
 position = Vector2(55, 21)
+
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D7" index="1"]
+position = Vector2(-25, -2)
+scale = Vector2(0.25, 0.25)
 
 [node name="Dave" type="Node2D" parent="."]
 position = Vector2(437, 599)
