@@ -1,9 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=38 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
 [ext_resource type="Texture2D" uid="uid://132q8nexmu3y" path="res://assets/SquirrelFrame2.png" id="5_dmsi2"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
 [ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
 atlas = ExtResource("7_dmsi2")
@@ -313,17 +314,24 @@ position = Vector2(35, -46)
 position = Vector2(55, 21)
 
 [node name="Dave" type="Node2D" parent="."]
-visible = false
 position = Vector2(437, 599)
 
 [node name="Dave" type="AnimatedSprite2D" parent="Dave"]
-position = Vector2(0, -0.99999994)
+position = Vector2(-68.99999, -78.99999)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
 script = ExtResource("15_dmsi2")
 
 [node name="Timer" type="Timer" parent="Dave"]
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("18_3am05")
 
 [connection signal="timeout" from="Dave/Timer" to="Dave/Dave" method="_on_timer_timeout"]
 
