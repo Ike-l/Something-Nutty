@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=39 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
+[ext_resource type="PackedScene" uid="uid://c54ve83yv0qm2" path="res://scenes/nut.tscn" id="3_3am05"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
 [ext_resource type="Script" path="res://scenes/Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpa2sxst4rrk" path="res://assets/SirNut.png" id="7_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://d13jmt47ju38c" path="res://assets/SirNut (1).png" id="7_ofm7x"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
+[ext_resource type="Script" uid="uid://dgfx3e8typrym" path="res://scripts/animated_sir_nut.gd" id="10_1afuj"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
@@ -174,16 +176,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 20.0,
 "texture": SubResource("AtlasTexture_l5y12")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_oqnwj")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_2vexs")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_om7ee")
 }],
 "loop": true,
@@ -238,19 +240,24 @@ script = ExtResource("1_d5dl1")
 [node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
 position = Vector2(375, -20)
 
+[node name="Sir Nut" parent="SirNut" index="0"]
+position = Vector2(-12, -2)
+scale = Vector2(1.7262461, 1.7286565)
+nut_scene = ExtResource("3_3am05")
+
 [node name="CollisionShape2D" parent="SirNut/Sir Nut" index="0"]
-position = Vector2(6, 1)
+position = Vector2(4.262125, 23.560873)
 
-[node name="SirNut" parent="SirNut/Sir Nut" index="1"]
-editor_description = "Sir Nut standing frame"
-scale = Vector2(0.2, 0.17)
-texture = ExtResource("3_0psjf")
-
-[node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut"]
-position = Vector2(-1350, 157)
+[node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut/Sir Nut" index="1"]
+position = Vector2(5.213623, 23.717838)
+scale = Vector2(0.11585835, 0.115696795)
 sprite_frames = SubResource("SpriteFrames_cofmf")
-animation = &"Catch"
-frame_progress = 0.8652976
+animation = &"Throw"
+script = ExtResource("10_1afuj")
+
+[node name="nut_spawn_point" type="Marker2D" parent="SirNut/Sir Nut" index="2"]
+position = Vector2(0.579298, 0.5784836)
+scale = Vector2(0.5792917, 0.57848394)
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1

@@ -31,10 +31,7 @@ func _on_timer_timeout() -> void:
 	match curr_state:
 		state.moving:
 			self.play("walk_right")
-			print("moving")
 		state.idle:
 			self.play("default")
-			print("idle")
 		state.throwing:
 			self.play("Throw")
-			print("throwing")
