@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=37 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -231,6 +231,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofm7x"]
+size = Vector2(151.25, 236)
+
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
 
@@ -238,7 +241,7 @@ script = ExtResource("1_d5dl1")
 position = Vector2(375, -20)
 
 [node name="CollisionShape2D" parent="SirNut/Sir Nut" index="0"]
-position = Vector2(-0.328125, -2.484375)
+position = Vector2(6, 1)
 
 [node name="SirNut" parent="SirNut/Sir Nut" index="1"]
 editor_description = "Sir Nut standing frame"
@@ -262,10 +265,6 @@ script = ExtResource("4_hlc4h")
 [node name="CollisionShape2D" parent="Tree/RigidBody2D" index="0"]
 position = Vector2(1, -91)
 debug_color = Color(0, 0, 0, 1)
-
-[node name="ColorRect" parent="Tree/RigidBody2D/CollisionShape2D" index="0"]
-offset_top = -230.5
-offset_bottom = -199.76666
 
 [node name="RigidBody2D1" parent="Tree/Branches" index="0"]
 position = Vector2(44, -287)
@@ -316,11 +315,17 @@ position = Vector2(-39, -287)
 position = Vector2(-88, 24)
 
 [node name="Dave" type="Node2D" parent="."]
+position = Vector2(437, 599)
 
 [node name="Dave" type="AnimatedSprite2D" parent="Dave"]
-position = Vector2(464, 603.00006)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Dave"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave/CharacterBody2D"]
+position = Vector2(-31, 20)
+shape = SubResource("RectangleShape2D_ofm7x")
 
 [editable path="SirNut"]
 [editable path="Tree"]

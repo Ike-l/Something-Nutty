@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ca48q03gqwwcp" path="res://assets/Sir nut.png" id="2_lpcc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26kvw"]
-size = Vector2(52.65625, 46.96875)
+size = Vector2(40, 40)
 
 [node name="SirNut" type="Node2D"]
 
