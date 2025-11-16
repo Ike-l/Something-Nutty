@@ -3,10 +3,12 @@ extends CharacterBody2D
 @export var speed = 300
 
 const gravitational_acceleration = 2
+
 @export var nut_scene: PackedScene
 @onready var nut_spawn_point = $"nut_spawn_point"
 @onready var animated_sir_nut = $"AnimatedSirNut"
 #enum state {idle, jumping, catching, throwing, moving}
+
 var storage = 10
 func fire_nut(): 
 	if storage > 0:

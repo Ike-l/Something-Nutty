@@ -1,8 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=34 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
@@ -24,8 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bmndcrk4vy4cp" path="res://assets/DaveWalkRight1.png" id="22_2vexs"]
 [ext_resource type="Texture2D" uid="uid://cfeckib1vg4go" path="res://assets/DaveWalkRight2.png" id="23_om7ee"]
 [ext_resource type="Texture2D" uid="uid://cybd2bf3p76vl" path="res://assets/DaveWalkRight3.png" id="24_6rpxt"]
+[ext_resource type="Script" uid="uid://cug13opip0yi3" path="res://scripts/AnimatedDave.gd" id="25_l5y12"]
 [ext_resource type="Texture2D" uid="uid://5oygqvauw4ec" path="res://assets/DaveWalkRight4.png" id="25_qrvva"]
-[ext_resource type="Script" uid="uid://bfxa2k2sp2mpk" path="res://scenes/button.gd" id="26_qhcem"]
+[ext_resource type="Script" path="res://scenes/button.gd" id="26_qhcem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0uwl"]
 size = Vector2(292, 21.375)
@@ -315,14 +316,23 @@ texture = ExtResource("11_om7ee")
 [node name="Dave" type="Node2D" parent="."]
 position = Vector2(437, 599)
 
-[node name="Dave" type="AnimatedSprite2D" parent="Dave"]
-position = Vector2(-59.999992, -50.999992)
+[node name="Dave" type="CharacterBody2D" parent="Dave"]
+script = ExtResource("15_dmsi2")
+nut_scene = ExtResource("3_f0uwl")
+
+[node name="AnimatedDave" type="AnimatedSprite2D" parent="Dave/Dave"]
+position = Vector2(-60, -51)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
 animation = &"WalkRight"
 frame = 3
 frame_progress = 0.75104165
-script = ExtResource("15_dmsi2")
+script = ExtResource("25_l5y12")
+nut_scene = ExtResource("3_f0uwl")
+
+[node name="nut_spawn_point_d" type="Marker2D" parent="Dave/Dave"]
+position = Vector2(-60, -51)
+scale = Vector2(0.25, 0.25)
 
 [node name="Timer" type="Timer" parent="Dave"]
 autostart = true
@@ -366,6 +376,7 @@ theme_override_font_sizes/font_size = 48
 text = "RESTART"
 script = ExtResource("26_qhcem")
 
+[connection signal="timeout" from="Dave/Timer" to="Dave/Dave/AnimatedDave" method="_on_timer_timeout"]
 [connection signal="timeout" from="Dave/Timer" to="Dave/Dave" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 
