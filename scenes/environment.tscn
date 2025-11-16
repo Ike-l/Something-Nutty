@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=37 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cybd2bf3p76vl" path="res://assets/DaveWalkRight3.png" id="24_6rpxt"]
 [ext_resource type="Texture2D" uid="uid://5oygqvauw4ec" path="res://assets/DaveWalkRight4.png" id="25_qrvva"]
 [ext_resource type="Script" uid="uid://bfxa2k2sp2mpk" path="res://scenes/button.gd" id="26_qhcem"]
+[ext_resource type="AudioStream" uid="uid://c4pfm2g732vea" path="res://assets/MainGame.mp3" id="29_2vexs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0uwl"]
 size = Vector2(292, 21.375)
@@ -381,6 +382,10 @@ offset_bottom = 590.0
 theme_override_font_sizes/font_size = 48
 text = "RESTART"
 script = ExtResource("26_qhcem")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_2vexs")
+autoplay = true
 
 [connection signal="area_entered" from="Tree/StaticBody2D" to="Tree/StaticBody2D" method="_on_area_entered"]
 [connection signal="body_entered" from="Tree/StaticBody2D" to="Tree/StaticBody2D" method="_on_body_entered"]

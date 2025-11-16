@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bepy1w7evij2f"]
+[gd_scene load_steps=4 format=3 uid="uid://bepy1w7evij2f"]
 
 [ext_resource type="Script" uid="uid://lia1clw2up0h" path="res://scenes/start.gd" id="1_fb70i"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="2_kmax6"]
+[ext_resource type="AudioStream" uid="uid://b2lg1fyatsfae" path="res://assets/LoadingScreen.mp3" id="3_fgoeh"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -34,5 +35,9 @@ texture = ExtResource("2_kmax6")
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fgoeh")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
