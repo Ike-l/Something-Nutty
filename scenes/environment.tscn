@@ -1,15 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=6 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
-[ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://scenes/Trunk.gd" id="4_hlc4h"]
+[ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
+[ext_resource type="PackedScene" path="res://scenes/Tree.tscn" id="3_d5dl1"]
+[ext_resource type="Script" path="res://scenes/Trunk.gd" id="4_hlc4h"]
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
 
 [node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
 position = Vector2(380, 40)
+
+[node name="SirNut" parent="SirNut/Sir Nut" index="1"]
+editor_description = "Sir Nut standing frame"
+scale = Vector2(0.35, 0.298)
+texture = ExtResource("3_0psjf")
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
