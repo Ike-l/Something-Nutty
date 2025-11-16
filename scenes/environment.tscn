@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="Texture2D" uid="uid://be06envijc4pp" path="res://assets/SquirrelFrame1.png" id="3_0psjf"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
-[ext_resource type="Script" path="res://scenes/Trunk.gd" id="4_hlc4h"]
+[ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://csd63d68d56mc" path="res://assets/SquirrelFrame4.png" id="4_yyxhd"]
 [ext_resource type="Texture2D" uid="uid://132q8nexmu3y" path="res://assets/SquirrelFrame2.png" id="5_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://bcj8o2vbu7efn" path="res://assets/SquirrelFrame3.png" id="6_ofm7x"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
 atlas = ExtResource("7_dmsi2")
