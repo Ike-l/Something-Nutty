@@ -1,5 +1,8 @@
 extends Area2D
 
+signal collided
+
+
 var speed: float = 750.0 
 var velocity: Vector2 = Vector2.ZERO 
 
@@ -10,5 +13,9 @@ func launch(direction: Vector2):
 	velocity = direction.normalized() * speed
 
 
-func _on_body_entered(body : Node2D):
-	queue_free() 
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		#print("hit sir nut")
+		body.call("collide")
+		queue_free()

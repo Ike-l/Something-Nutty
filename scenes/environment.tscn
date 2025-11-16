@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=39 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -160,6 +160,9 @@ animations = [{
 "name": &"right",
 "speed": 2.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om7ee"]
+size = Vector2(119, 121)
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
@@ -335,6 +338,8 @@ z_index = 6
 position = Vector2(437, 599)
 
 [node name="Dave" type="CharacterBody2D" parent="Dave"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("15_dmsi2")
 nut_scene = ExtResource("3_f0uwl")
 
@@ -352,8 +357,11 @@ nut_scene = ExtResource("3_f0uwl")
 position = Vector2(-60, -51)
 scale = Vector2(0.25, 0.25)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dave/Dave"]
+position = Vector2(-49.5, -50.5)
+shape = SubResource("RectangleShape2D_om7ee")
+
 [node name="Timer" type="Timer" parent="Dave"]
-wait_time = 0.2
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -366,13 +374,13 @@ offset_bottom = 40.0
 texture = ExtResource("18_3am05")
 
 [node name="Control" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
+visible = false
 z_index = 8
 layout_mode = 0
 offset_left = 235.0
@@ -385,6 +393,7 @@ theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
 
 [node name="Button" type="Button" parent="Control"]
+visible = false
 z_index = 6
 layout_mode = 0
 offset_left = 448.0
@@ -394,6 +403,17 @@ offset_bottom = 590.0
 theme_override_font_sizes/font_size = 48
 text = "RESTART"
 script = ExtResource("26_qhcem")
+
+[node name="Label2" type="Label" parent="Control"]
+visible = false
+z_index = 6
+layout_mode = 0
+offset_left = 333.0
+offset_top = 216.0
+offset_right = 847.0
+offset_bottom = 391.0
+theme_override_font_sizes/font_size = 128
+text = "WINNER"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_2vexs")

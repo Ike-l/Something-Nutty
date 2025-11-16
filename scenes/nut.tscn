@@ -4,17 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://b84yu63go1bt1" path="res://assets/nut.png" id="2_3oi6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxtfq"]
-radius = 7.0
-height = 18.0
+radius = 2.9999998
+height = 8.2
 
 [node name="nut" type="Area2D"]
 scale = Vector2(10, 10)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_4d5p4")
 
 [node name="Area2D" type="CollisionShape2D" parent="."]
-position = Vector2(343, 291)
 shape = SubResource("CapsuleShape2D_fxtfq")
 
 [node name="Nut" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_3oi6o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 @export var speed = 300
 
 const gravitational_acceleration = 2
@@ -8,12 +9,12 @@ const gravitational_acceleration = 2
 @onready var nut_spawn_point = $"nut_spawn_point"
 @onready var animated_sir_nut = $"AnimatedSirNut"
 #enum state {idle, jumping, catching, throwing, moving}
-var storage = 1
+var storage = 2
 func fire_nut(): 
 	if storage > 0:
 		storage -= 1
 		var nut_instance = nut_scene.instantiate()
-		nut_instance.global_position = nut_spawn_point.global_position
+		nut_instance.global_position = nut_spawn_point.global_position + Vector2(0, 50)
 		get_tree().root.add_child(nut_instance)
 		nut_instance.launch(Vector2.DOWN)
 		animated_sir_nut.curr_state = animated_sir_nut.State.throwing
@@ -28,9 +29,6 @@ const RIGHT = 1
 var facing_direction = LEFT
 var facing_dirty = false
 
-var nuts = 0
-
-
 func _process(delta: float) -> void:
 	if facing_dirty:
 		pass
@@ -38,7 +36,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("launch_acorn"):
 		fire_nut()
 
-
+var health = 3
+func collide():
+	if Input.is_action_pressed("catch"):
+		storage += 1
+	else:
+		health -= 1
+		if health <= 0:
+			get_node("../../Control/Label").visible = true
+			get_node("../../Control/Button").visible = true
+			# do death
 
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
@@ -72,8 +79,11 @@ func _physics_process(delta: float) -> void:
 	animated_sir_nut.curr_state = new_state
 	move_and_slide()
 	
+	#print(get_slide_collision_count())
 	# Check collisions
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().has_method("sir_nut_hit_the_second_tower"):
 			collision.get_collider().call("sir_nut_hit_the_second_tower")
+		#if collision.get_collider().has_method("abcde"):
+			#print("A")

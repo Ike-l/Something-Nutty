@@ -55,14 +55,23 @@ func _physics_process(delta):
 	animated_dave.flip_h = velocity.x < 0
 	
 
+var health = 5
+func collide():
+	health -= 1
+	if health <= 0:
+		queue_free()
+		#get_node("../../Control/Label2").visible = true
+		#get_node("../../Control/Button").visible = true
+		# do death
+
 func fire_nut(): 
 		var nut_instance = nut_scene.instantiate()
-		nut_instance.global_position = nut_spawn_point.global_position
+		nut_instance.global_position = nut_spawn_point.global_position + Vector2(0, -100)
 		get_tree().root.add_child(nut_instance)
 		nut_instance.launch(Vector2.UP)
-		print(curr_state)
 
 func _on_timer_timeout() -> void:
-	curr_state = [state.moving, state.idle, state.throwing][rng.rand_weighted([1, 0.1, 2])]
+	animated_dave.curr_state = [state.moving, state.idle, state.throwing][rng.rand_weighted([1, 0.4, 2])]
+	curr_state = animated_dave.curr_state
 	if curr_state == state.throwing:
 		fire_nut()
