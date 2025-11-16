@@ -1,6 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://eof2l0m70uh6"]
+[gd_scene load_steps=13 format=3 uid="uid://eof2l0m70uh6"]
 
+[ext_resource type="Texture2D" uid="uid://cijo1svyqia6p" path="res://assets/BranchEndLeaves.png" id="1_pikbw"]
 [ext_resource type="Texture2D" uid="uid://b8hnc100yr54d" path="res://assets/longBranch.png" id="1_wr6xk"]
+[ext_resource type="Texture2D" uid="uid://ui1ugkwsu5y4" path="res://assets/BranchTwigs.png" id="2_fqdss"]
+[ext_resource type="Texture2D" uid="uid://dngijidrp24kv" path="res://assets/BranchNoTwigs.png" id="3_dgup6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqdss"]
 size = Vector2(214, 24)
@@ -34,9 +37,9 @@ size = Vector2(139, 24)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D0/CollisionShape2D"]
-position = Vector2(17, -6)
+position = Vector2(-18, 6)
 scale = Vector2(-0.5, 0.3)
-texture = ExtResource("1_wr6xk")
+texture = ExtResource("1_pikbw")
 
 [node name="RigidBody2D1" type="StaticBody2D" parent="."]
 
@@ -44,9 +47,9 @@ texture = ExtResource("1_wr6xk")
 shape = SubResource("RectangleShape2D_wr6xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D1/CollisionShape2D"]
-position = Vector2(-17, -6)
+position = Vector2(18, 6)
 scale = Vector2(0.5, 0.3)
-texture = ExtResource("1_wr6xk")
+texture = ExtResource("2_fqdss")
 
 [node name="RigidBody2D2" type="StaticBody2D" parent="."]
 
@@ -74,9 +77,9 @@ texture = ExtResource("1_wr6xk")
 shape = SubResource("RectangleShape2D_22pnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4/CollisionShape2D"]
-position = Vector2(17, -6)
+position = Vector2(-7, 6)
 scale = Vector2(-0.35, 0.3)
-texture = ExtResource("1_wr6xk")
+texture = ExtResource("3_dgup6")
 
 [node name="RigidBody2D5" type="StaticBody2D" parent="."]
 
