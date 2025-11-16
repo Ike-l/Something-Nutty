@@ -7,15 +7,17 @@ const gravitational_acceleration = 2
 @onready var nut_spawn_point = $"nut_spawn_point"
 @onready var animated_sir_nut = $"AnimatedSirNut"
 #enum state {idle, jumping, catching, throwing, moving}
-
-func fire_nut():
-	var nut_instance = nut_scene.instantiate()
-	nut_instance.global_position = nut_spawn_point.global_position
-	get_tree().root.add_child(nut_instance)
-	nut_instance.launch(Vector2.DOWN)
-	animated_sir_nut.curr_state = animated_sir_nut.State.throwing
-	print(self.global_position)
-	print(nut_instance.global_position)
+var storage = 0
+func fire_nut(): 
+	if storage > 0:
+		storage -= 1
+		var nut_instance = nut_scene.instantiate()
+		nut_instance.global_position = nut_spawn_point.global_position
+		get_tree().root.add_child(nut_instance)
+		nut_instance.launch(Vector2.DOWN)
+		animated_sir_nut.curr_state = animated_sir_nut.State.throwing
+		#print(self.global_position)
+		#print(nut_instance.global_position)
 
 const JUMP_VELOCITY = -400.0
 
@@ -63,6 +65,8 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		
+	
 	
 	animated_sir_nut.curr_state = new_state
 	move_and_slide()
