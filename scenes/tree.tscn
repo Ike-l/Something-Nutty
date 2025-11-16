@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://binuyqm458jt6"]
+[gd_scene load_steps=7 format=3 uid="uid://binuyqm458jt6"]
 
 [ext_resource type="PackedScene" uid="uid://eof2l0m70uh6" path="res://scenes/Branches.tscn" id="1_2cic4"]
 [ext_resource type="Texture2D" uid="uid://tyovodgbibc6" path="res://assets/trunk.png" id="1_omb14"]
+[ext_resource type="Texture2D" uid="uid://bvrlbugtytawi" path="res://assets/hole1.png" id="3_874r4"]
 
 [sub_resource type="GDScript" id="GDScript_omb14"]
 script/source = "extends Node2D
@@ -21,6 +22,17 @@ func _process(delta: float) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3xqg"]
 size = Vector2(36, 454.5)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvbew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_874r4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Tree" type="Node2D"]
 script = SubResource("GDScript_omb14")
 
@@ -35,5 +47,37 @@ scale = Vector2(0.15, 0.3)
 texture = ExtResource("1_omb14")
 
 [node name="Branches" parent="." instance=ExtResource("1_2cic4")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D0" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D1" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D2" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D3" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D4" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D5" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D6" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Branches/RigidBody2D7" index="1"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_qvbew")
 
 [editable path="Branches"]

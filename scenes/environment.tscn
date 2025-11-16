@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
 atlas = ExtResource("7_dmsi2")
@@ -265,55 +265,86 @@ position = Vector2(1, -91)
 debug_color = Color(0, 0, 0, 1)
 
 [node name="RigidBody2D0" parent="Tree/Branches" index="0"]
-position = Vector2(-39, -287)
+position = Vector2(-63, -289)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="0"]
 position = Vector2(-88, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D0" index="1"]
+position = Vector2(52, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D1" parent="Tree/Branches" index="1"]
-position = Vector2(44, -287)
+position = Vector2(69, -257)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D1" index="0"]
 position = Vector2(83, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D1" index="1"]
+position = Vector2(-60, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D2" parent="Tree/Branches" index="2"]
-position = Vector2(-35, -205)
+position = Vector2(-35, -214)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D2" index="0"]
 position = Vector2(-92, 23)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D2" index="1"]
+position = Vector2(21, 1)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D3" parent="Tree/Branches" index="3"]
-position = Vector2(38, -203)
+position = Vector2(38, -181)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D3" index="0"]
 position = Vector2(88, 21)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D3" index="1"]
+position = Vector2(-26.999998, -3.9999998)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D4" parent="Tree/Branches" index="4"]
-position = Vector2(-33, -128)
+position = Vector2(-33, -132)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D4" index="0"]
 position = Vector2(-65, 24)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D4" index="1"]
+position = Vector2(25, 1)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D5" parent="Tree/Branches" index="5"]
-position = Vector2(36, -124)
+position = Vector2(37, -71)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D5" index="0"]
 position = Vector2(62, 21)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D5" index="1"]
+position = Vector2(-27, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D6" parent="Tree/Branches" index="6"]
-position = Vector2(-35, -49)
+position = Vector2(-35, -13)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D6" index="0"]
 position = Vector2(-55, 23)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D6" index="1"]
+position = Vector2(24, 0)
+scale = Vector2(0.25, 0.25)
+
 [node name="RigidBody2D7" parent="Tree/Branches" index="7"]
-position = Vector2(35, -46)
+position = Vector2(34, 45)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D7" index="0"]
 position = Vector2(55, 21)
 
+[node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D7" index="1"]
+position = Vector2(-25, -2)
+scale = Vector2(0.25, 0.25)
+
 [node name="Dave" type="Node2D" parent="."]
-visible = false
 position = Vector2(437, 599)
 
 [node name="Dave" type="AnimatedSprite2D" parent="Dave"]

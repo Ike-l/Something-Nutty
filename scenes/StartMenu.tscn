@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bepy1w7evij2f"]
+
+[ext_resource type="Script" uid="uid://lia1clw2up0h" path="res://scenes/start.gd" id="1_fb70i"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 335.0
+offset_right = 651.0
+offset_bottom = 399.0
+script = ExtResource("1_fb70i")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
