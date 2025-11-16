@@ -4,13 +4,13 @@ const speed = 300
 
 const gravitational_acceleration = 2
 @export var nut_scene: PackedScene
-@onready var nut_spawn_point = $nut_spawn_point
+#@onready var nut_spawn_point = $nut_spawn_point
 
-func fire_nut():
-	var nut_instance = nut_scene.instantiate()
-	nut_instance.global_position = nut_spawn_point.global_position
-	get_parent().add_child(nut_instance)
-	nut_instance.launch(Vector2.DOWN)
+#func fire_nut():
+	#var nut_instance = nut_scene.instantiate()
+	#nut_instance.global_position = nut_spawn_point.global_position
+	#get_parent().add_child(nut_instance)
+	#nut_instance.launch(Vector2.DOWN)
 
 const JUMP_VELOCITY = -400.0
 
@@ -22,18 +22,13 @@ var facing_dirty = false
 
 var nuts = 0
 
-func set_branch(new_position: Vector2):
-	self.translate(-position)
-	self.translate(new_position)
-	velocity = Vector2.ZERO 
-
 
 func _process(delta: float) -> void:
 	if facing_dirty:
 		pass
 		# set facing sprite
-	if Input.is_action_just_pressed("launch_acorn"):
-		fire_nut()
+	#if Input.is_action_just_pressed("launch_acorn"):
+		#fire_nut()
 
 
 func _physics_process(delta: float) -> void:
@@ -57,10 +52,21 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		
-	var collision = move_and_collide(velocity, true)
+	#print(velocity)
+	#print(position)
+	#var collision = move_and_collide(velocity, true)
+	#print("A")
+	#
+	#if collision:
+		#if collision.get_collider().has_method("sir_nut_hit_the_second_tower"):
+			#collision.get_collider().call("sir_nut_hit_the_second_tower")
+			#
+	#move_and_slide()
+	
 	move_and_slide()
 	
-	if collision:
+	# Check collisions
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
 		if collision.get_collider().has_method("sir_nut_hit_the_second_tower"):
 			collision.get_collider().call("sir_nut_hit_the_second_tower")
-		
