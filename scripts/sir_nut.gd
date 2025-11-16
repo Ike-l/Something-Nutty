@@ -7,7 +7,7 @@ const gravitational_acceleration = 2
 @onready var nut_spawn_point = $"nut_spawn_point"
 @onready var animated_sir_nut = $"AnimatedSirNut"
 #enum state {idle, jumping, catching, throwing, moving}
-var storage = 10
+var storage = 1
 func fire_nut(): 
 	if storage > 0:
 		storage -= 1

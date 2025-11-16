@@ -24,6 +24,14 @@ func _physics_process(delta):
 			speed *= -1
 			self.play("WalkLeft")
 			#velocity.x = speed
+		
+		if (position + Vector2(speed*delta, 0)).x < -137:
+			speed *= -1
+			self.play("WalkRight")
+		elif (position + Vector2(speed*delta, 0)).x > 500:
+			speed *= -1
+			self.play("WalkLeft")
+
 		position += Vector2(speed*delta, 0)
 	
 	

@@ -34,13 +34,13 @@
 size = Vector2(292, 21.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwu6h"]
-size = Vector2(19, 76.6875)
+size = Vector2(10, 572.34375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqnwj"]
 size = Vector2(280, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhcem"]
-size = Vector2(15.375, 80.34375)
+size = Vector2(4.6875, 551.1719)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5y12"]
 size = Vector2(15.375, 57.34375)
@@ -199,7 +199,7 @@ position = Vector2(-99, -69.6875)
 shape = SubResource("RectangleShape2D_f0uwl")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="3"]
-position = Vector2(-240.5, -22)
+position = Vector2(-236, 225.82813)
 shape = SubResource("RectangleShape2D_bwu6h")
 
 [node name="RigidBody2D1" parent="Tree/Branches" index="1"]
@@ -217,7 +217,7 @@ position = Vector2(89, -70)
 shape = SubResource("RectangleShape2D_oqnwj")
 
 [node name="CollisionShape2D3" parent="Tree/Branches/RigidBody2D1" index="3"]
-position = Vector2(233, -27)
+position = Vector2(227.65625, 208.41406)
 shape = SubResource("RectangleShape2D_qhcem")
 
 [node name="RigidBody2D2" parent="Tree/Branches" index="2"]
