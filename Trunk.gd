@@ -13,6 +13,8 @@ var can_hit := true
 var rng = RandomNumberGenerator.new()
 
 func sir_nut_hit_the_second_tower():
+	if current_branch == 8:
+		return
 	if not can_hit:
 		return
 	
