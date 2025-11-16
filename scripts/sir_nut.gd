@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		
-	
+	animated_sir_nut.flip_h = velocity.x < 0
 	
 	animated_sir_nut.curr_state = new_state
 	move_and_slide()
