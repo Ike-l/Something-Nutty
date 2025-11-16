@@ -1,10 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=36 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
+[ext_resource type="Texture2D" uid="uid://b3u2rrelsa7d" path="res://assets/NutPile.png" id="7_oqnwj"]
+[ext_resource type="Script" uid="uid://cftpjmyxtt0i7" path="res://scenes/win.gd" id="8_2vexs"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
@@ -41,6 +43,9 @@ size = Vector2(15.375, 80.34375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5y12"]
 size = Vector2(15.375, 57.34375)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_om7ee"]
+radius = 51.009804
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0uwl"]
 animations = [{
@@ -312,6 +317,17 @@ offset_right = 668.0
 offset_bottom = -123.0
 texture = ExtResource("11_om7ee")
 
+[node name="StaticBody2D" type="Area2D" parent="Tree"]
+position = Vector2(122, 171)
+script = ExtResource("8_2vexs")
+
+[node name="NutPile" type="Sprite2D" parent="Tree/StaticBody2D"]
+scale = Vector2(0.46800005, 0.44385964)
+texture = ExtResource("7_oqnwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/StaticBody2D"]
+shape = SubResource("CircleShape2D_om7ee")
+
 [node name="Dave" type="Node2D" parent="."]
 position = Vector2(437, 599)
 
@@ -366,6 +382,8 @@ theme_override_font_sizes/font_size = 48
 text = "RESTART"
 script = ExtResource("26_qhcem")
 
+[connection signal="area_entered" from="Tree/StaticBody2D" to="Tree/StaticBody2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Tree/StaticBody2D" to="Tree/StaticBody2D" method="_on_body_entered"]
 [connection signal="timeout" from="Dave/Timer" to="Dave/Dave" method="_on_timer_timeout"]
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 
