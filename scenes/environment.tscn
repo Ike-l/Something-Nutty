@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=51 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpa2sxst4rrk" path="res://assets/SirNut.png" id="7_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://d13jmt47ju38c" path="res://assets/SirNut (1).png" id="7_ofm7x"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
-[ext_resource type="Script" uid="uid://dgfx3e8typrym" path="res://scripts/animated_sir_nut.gd" id="10_1afuj"]
+[ext_resource type="Script" path="res://scripts/animated_sir_nut.gd" id="10_1afuj"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
 [ext_resource type="Texture2D" uid="uid://d17shqv3vcr4u" path="res://assets/Treetop.png" id="11_om7ee"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://s3j5dti4h32r" path="res://assets/DaveCrouchRight.png" id="13_t8dep"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
 [ext_resource type="Texture2D" uid="uid://b0jt71cwkifd0" path="res://assets/DaveWalk1.png" id="18_bwu6h"]
 [ext_resource type="Texture2D" uid="uid://dhk8sfuuxnypq" path="res://assets/DaveBlink.png" id="19_cofmf"]
