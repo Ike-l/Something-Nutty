@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=41 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -13,11 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
+[ext_resource type="Texture2D" uid="uid://sf4gmloo1cd0" path="res://assets/DaveCrouchLeft.png" id="12_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
+[ext_resource type="Texture2D" uid="uid://s3j5dti4h32r" path="res://assets/DaveCrouchRight.png" id="13_t8dep"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
 [ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
+[ext_resource type="Texture2D" uid="uid://dhk8sfuuxnypq" path="res://assets/DaveBlink.png" id="19_cofmf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmsi2"]
 atlas = ExtResource("7_dmsi2")
@@ -196,6 +199,34 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_6p5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6p5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6p5pf")
+}],
+"loop": true,
+"name": &"BounceLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_t8dep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t8dep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t8dep")
+}],
+"loop": true,
+"name": &"BounceRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("9_80s2q")
 }, {
 "duration": 1.0,
@@ -211,9 +242,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_375xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cofmf")
+}, {
+"duration": 20.0,
+"texture": ExtResource("12_375xh")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default-Blink",
 "speed": 5.0
 }, {
 "frames": [{
@@ -320,6 +357,8 @@ position = Vector2(437, 599)
 position = Vector2(-68.99999, -78.99999)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_f0uwl")
+animation = &"default-Blink"
+frame_progress = 0.6365796
 script = ExtResource("15_dmsi2")
 
 [node name="Timer" type="Timer" parent="Dave"]
