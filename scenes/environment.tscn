@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=17 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
@@ -10,6 +10,16 @@ script = ExtResource("1_d5dl1")
 
 [node name="SirNut" parent="." instance=ExtResource("2_fm4en")]
 position = Vector2(377, 16)
+
+[node name="SirNut" parent="SirNut/Sir Nut" index="1"]
+editor_description = "Sir Nut standing frame"
+scale = Vector2(0.35, 0.298)
+texture = ExtResource("3_0psjf")
+
+[node name="AnimatedSirNut" type="AnimatedSprite2D" parent="SirNut"]
+sprite_frames = SubResource("SpriteFrames_cofmf")
+animation = &"blinking"
+frame_progress = 0.083187304
 
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
@@ -75,6 +85,13 @@ position = Vector2(-39, -287)
 
 [node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="0"]
 position = Vector2(-88, 24)
+
+[node name="Dave" type="Node2D" parent="."]
+
+[node name="Dave" type="AnimatedSprite2D" parent="Dave"]
+position = Vector2(464, 603.00006)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_f0uwl")
 
 [editable path="SirNut"]
 [editable path="Tree"]
