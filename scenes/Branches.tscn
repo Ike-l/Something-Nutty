@@ -11,24 +11,20 @@ size = Vector2(214, 24)
 
 [node name="Branches" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D1" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D1"]
 shape = SubResource("RectangleShape2D_0116v")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D/CollisionShape2D"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D1/CollisionShape2D"]
 offset_left = -107.0
 offset_top = -11.0
 offset_right = 105.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(-128, -251)
 shape = SubResource("RectangleShape2D_wr6xk")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D2/CollisionShape2D"]
@@ -37,84 +33,67 @@ offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D3" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D3" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
-position = Vector2(-127, -174)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D3/CollisionShape2D"]
-visible = false
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D4" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D4" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
-position = Vector2(-124, -69)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D4/CollisionShape2D"]
-visible = false
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D5" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
-position = Vector2(-125, 90)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D5/CollisionShape2D"]
-visible = false
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D6" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6"]
-position = Vector2(126, -118)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D6/CollisionShape2D"]
-visible = false
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D7" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7"]
-position = Vector2(126, 127)
 shape = SubResource("RectangleShape2D_fqdss")
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D7/CollisionShape2D"]
-visible = false
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0
 offset_bottom = 14.0
 
-[node name="RigidBody2D8" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="RigidBody2D0" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D8"]
-position = Vector2(124, 24)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D0"]
 shape = SubResource("RectangleShape2D_fqdss")
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D8/CollisionShape2D"]
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D0/CollisionShape2D"]
 offset_left = -104.0
 offset_top = -11.0
 offset_right = 108.0

@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y = gravitational_acceleration
 	
-	
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		
@@ -62,4 +61,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if collision:
-		print(collision.get_position())
+		if collision.get_collider().has_method("sir_nut_hit_the_second_tower"):
+			collision.get_collider().call("sir_nut_hit_the_second_tower")
+		

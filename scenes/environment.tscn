@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://de1abd0ch6wpt"]
+[gd_scene load_steps=5 format=3 uid="uid://de1abd0ch6wpt"]
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
 [ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
+[ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://scenes/Trunk.gd" id="4_hlc4h"]
 
 [node name="Environment" type="Node2D"]
 script = ExtResource("1_d5dl1")
@@ -13,6 +14,65 @@ position = Vector2(380, 40)
 [node name="Tree" parent="." instance=ExtResource("3_d5dl1")]
 z_index = 1
 position = Vector2(594, 322)
+
+[node name="RigidBody2D" parent="Tree" index="0"]
+disable_mode = 1
+script = ExtResource("4_hlc4h")
+
+[node name="CollisionShape2D" parent="Tree/RigidBody2D" index="0"]
+position = Vector2(1, -90.5)
+
+[node name="ColorRect" parent="Tree/RigidBody2D/CollisionShape2D" index="0"]
+offset_top = -230.5
+offset_bottom = -199.76666
+
+[node name="RigidBody2D1" parent="Tree/Branches" index="0"]
+position = Vector2(40, -243)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D1" index="0"]
+position = Vector2(91, 29)
+
+[node name="RigidBody2D2" parent="Tree/Branches" index="1"]
+position = Vector2(-40, -155)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D2" index="0"]
+position = Vector2(-91, 25)
+
+[node name="RigidBody2D3" parent="Tree/Branches" index="2"]
+position = Vector2(43, -150)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D3" index="0"]
+position = Vector2(88, 27)
+
+[node name="RigidBody2D4" parent="Tree/Branches" index="3"]
+position = Vector2(-41, -65)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D4" index="0"]
+position = Vector2(-88, 26)
+
+[node name="RigidBody2D5" parent="Tree/Branches" index="4"]
+position = Vector2(40, -62)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D5" index="0"]
+position = Vector2(91, 28)
+
+[node name="RigidBody2D6" parent="Tree/Branches" index="5"]
+position = Vector2(-47, 29)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D6" index="0"]
+position = Vector2(-83, 29)
+
+[node name="RigidBody2D7" parent="Tree/Branches" index="6"]
+position = Vector2(52, 32)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D7" index="0"]
+position = Vector2(79, 28)
+
+[node name="RigidBody2D0" parent="Tree/Branches" index="7"]
+position = Vector2(-44, -244)
+
+[node name="CollisionShape2D" parent="Tree/Branches/RigidBody2D0" index="0"]
+position = Vector2(-84, 26)
 
 [editable path="SirNut"]
 [editable path="Tree"]
