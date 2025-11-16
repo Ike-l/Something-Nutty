@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cxn8rtjg71wse" path="res://scripts/environment.gd" id="1_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://nn3cxg8w23s7" path="res://scenes/Sir Nut.tscn" id="2_fm4en"]
-[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/Tree.tscn" id="3_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://binuyqm458jt6" path="res://scenes/tree.tscn" id="3_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://bievc6vxo4bh7" path="res://scenes/nut.tscn" id="3_f0uwl"]
 [ext_resource type="Script" uid="uid://gjogryhtjxsk" path="res://Trunk.gd" id="4_hlc4h"]
 [ext_resource type="Texture2D" uid="uid://ck503fdlwvjs4" path="res://assets/DaveHoldingNut.png" id="9_80s2q"]
 [ext_resource type="Texture2D" uid="uid://dwmt7oyo786ui" path="res://assets/DaveLowNut.png" id="10_3am05"]
 [ext_resource type="Texture2D" uid="uid://deis3hppkgd6o" path="res://assets/DaveHighNut.png" id="11_1afuj"]
+[ext_resource type="Texture2D" uid="uid://d17shqv3vcr4u" path="res://assets/Treetop.png" id="11_om7ee"]
 [ext_resource type="Texture2D" uid="uid://sf4gmloo1cd0" path="res://assets/DaveCrouchLeft.png" id="12_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://w8fg48sd0y8b" path="res://assets/DaveFront.png" id="12_375xh"]
 [ext_resource type="Texture2D" uid="uid://71wmu7erpxpr" path="res://assets/DaveSide.png" id="13_6p5pf"]
 [ext_resource type="Texture2D" uid="uid://s3j5dti4h32r" path="res://assets/DaveCrouchRight.png" id="13_t8dep"]
 [ext_resource type="Texture2D" uid="uid://buykdx06yq5wc" path="res://assets/DaveRight.png" id="14_t8dep"]
-[ext_resource type="Script" uid="uid://lywep3fi8err" path="res://scripts/dave.gd" id="15_dmsi2"]
+[ext_resource type="Script" path="res://scripts/dave.gd" id="15_dmsi2"]
 [ext_resource type="Texture2D" uid="uid://cm2rpk7e6sfq6" path="res://assets/background-1.png.png" id="18_3am05"]
 [ext_resource type="Texture2D" uid="uid://b0jt71cwkifd0" path="res://assets/DaveWalk1.png" id="18_bwu6h"]
 [ext_resource type="Texture2D" uid="uid://dhk8sfuuxnypq" path="res://assets/DaveBlink.png" id="19_cofmf"]
@@ -284,6 +285,13 @@ position = Vector2(55, 21)
 [node name="AnimatedSprite2D" parent="Tree/Branches/RigidBody2D7" index="1"]
 position = Vector2(-25, -2)
 scale = Vector2(0.25, 0.25)
+
+[node name="TextureRect" type="TextureRect" parent="Tree"]
+offset_left = -678.0
+offset_top = -771.0
+offset_right = 668.0
+offset_bottom = -123.0
+texture = ExtResource("11_om7ee")
 
 [node name="CollisionShape2D3" parent="Tree/Branches/RigidBody2D7" index="2"]
 position = Vector2(124, -36)
