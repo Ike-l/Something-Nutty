@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 @export var speed = 200
-@onready var my_timer = $Timer
+@onready var my_timer = $"../Timer"
 var screen_size
 enum state {moving, idle, throwing}
 var curr_state = state.moving
