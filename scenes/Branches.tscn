@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://eof2l0m70uh6"]
+[gd_scene load_steps=18 format=3 uid="uid://eof2l0m70uh6"]
 
 [ext_resource type="Texture2D" uid="uid://cijo1svyqia6p" path="res://assets/BranchEndLeaves.png" id="1_pikbw"]
 [ext_resource type="Texture2D" uid="uid://b8hnc100yr54d" path="res://assets/longBranch.png" id="1_wr6xk"]
 [ext_resource type="Texture2D" uid="uid://ui1ugkwsu5y4" path="res://assets/BranchTwigs.png" id="2_fqdss"]
 [ext_resource type="Texture2D" uid="uid://dngijidrp24kv" path="res://assets/BranchNoTwigs.png" id="3_dgup6"]
+[ext_resource type="Texture2D" uid="uid://bvrlbugtytawi" path="res://assets/hole1.png" id="5_22pnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqdss"]
 size = Vector2(263.25, 24)
@@ -31,6 +32,23 @@ size = Vector2(139, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7vfj"]
 size = Vector2(139, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip5p7"]
+size = Vector2(201.5, 10.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gwre"]
+size = Vector2(9, 144.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrgbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_22pnw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Branches" type="Node2D"]
 
@@ -149,3 +167,15 @@ texture = ExtResource("1_wr6xk")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D7"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_b4cca")
+
+[node name="RigidBody2D8" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D8"]
+shape = SubResource("RectangleShape2D_ip5p7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D8"]
+shape = SubResource("RectangleShape2D_0gwre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D8"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_mrgbw")

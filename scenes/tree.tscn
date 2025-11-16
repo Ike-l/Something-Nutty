@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3xqg"]
-size = Vector2(36, 454.5)
+size = Vector2(36, 517.25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvbew"]
 animations = [{
